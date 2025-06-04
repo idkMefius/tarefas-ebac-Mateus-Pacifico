@@ -1,0 +1,55 @@
+algoritmo Despertar
+var estado: texto
+var alarmeTocou: logico
+var olhosAbertos: logico
+var foraDaCama: logico
+
+inicio
+  estado <- "dormindo"
+  alarmeTocou <- falso
+  olhosAbertos <- falso
+  foraDaCama <- falso
+  escreva("Situação atual: ", estado)
+
+  escreva("Aguardando o estímulo para acordar...")
+
+  alarmeTocou <- verdadeiro
+  escreva("Estímulo recebido (ex: alarme tocou)!")
+
+  se alarmeTocou = verdadeiro entao
+    estado <- "despertando"
+    escreva("Situação atual: ", estado)
+
+    escreva("Ação: Cérebro processa o estímulo.")
+    escreva("Ação: Tentativa de abrir os olhos.")
+    olhosAbertos <- verdadeiro
+    escreva("Ação: Olhos abertos.")
+
+    escreva("Ação: Localizar e desligar o despertador (se houver).")
+    escreva("Ação: Alarme desligado.")
+
+    estado <- "acordado"
+    escreva("Situação atual: ", estado)
+    escreva("Ação: Tomada de consciência do ambiente e do corpo.")
+    escreva("Ação: Breve espreguiçada ou bocejo (opcional).")
+    escreva("Ação: Decisão de sair da cama.")
+  senao
+    escreva("Nenhum estímulo para acordar detectado. Continua dormindo.")
+    fimalgoritmo
+  fimse
+
+  se estado = "acordado" entao
+    escreva("Ação: Movimentar o corpo para sentar na cama.")
+    escreva("Ação: Colocar os pés no chão.")
+    escreva("Ação: Impulsionar o corpo para ficar de pé.")
+    foraDaCama <- verdadeiro
+    estado <- "levantado"
+    escreva("Situação atual: ", estado)
+    escreva("Ação: Corpo fora da cama e em pé.")
+  fimse
+
+  se foraDaCama = verdadeiro entao
+    escreva("Processo de acordar concluído. Pronto para iniciar o dia!")
+  fimse
+  
+fimalgoritmo
